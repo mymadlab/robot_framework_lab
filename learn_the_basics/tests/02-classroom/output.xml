@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.13 on darwin)" generated="2026-10-17T19:31:16.651835" rpa="false" schemaversion="5">
+<suite id="s1" name="02-Classroom" source="/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom">
+<suite id="s1-s1" name="01-Lists" source="/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/01-lists.robot">
+<test id="s1-s1-t1" name="Print list of names" line="8">
+<kw name="Print Multiple Names" owner="lists">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}</arg>
+<arg>no_newline=True # Required to ensure first name appears on a new line without an empty line</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.678581" elapsed="0.000167"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.678920" elapsed="0.000110"/>
+</kw>
+<var name="${name}">Simon Says</var>
+<status status="PASS" start="2026-10-17T19:31:16.678859" elapsed="0.000192"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.679144" elapsed="0.000098"/>
+</kw>
+<var name="${name}">Simone Says</var>
+<status status="PASS" start="2026-10-17T19:31:16.679091" elapsed="0.000166"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.679341" elapsed="0.000099"/>
+</kw>
+<var name="${name}">Simone Said</var>
+<status status="PASS" start="2026-10-17T19:31:16.679291" elapsed="0.000164"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.679535" elapsed="0.000092"/>
+</kw>
+<var name="${name}">Simon Said</var>
+<status status="PASS" start="2026-10-17T19:31:16.679486" elapsed="0.000155"/>
+</iter>
+<var>${name}</var>
+<value>@{names}</value>
+<status status="PASS" start="2026-10-17T19:31:16.678799" elapsed="0.000855"/>
+</for>
+<arg>@{NAMES}</arg>
+<status status="PASS" start="2026-10-17T19:31:16.678237" elapsed="0.001443"/>
+</kw>
+<doc>Print the list of names using the keyword defined in the resource file</doc>
+<status status="PASS" start="2026-10-17T19:31:16.677883" elapsed="0.001856"/>
+</test>
+<test id="s1-s1-t2" name="Print list of names from file" line="12">
+<kw name="Read Names From File" owner="lists">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2026-10-17T19:31:16.680246" level="INFO" html="true">Getting file '&lt;a href="file:///Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/test_data/students.txt"&gt;/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/test_data/students.txt&lt;/a&gt;'.</msg>
+<msg time="2026-10-17T19:31:16.680380" level="INFO">${names} = Simon Says
+Simone Said</msg>
+<var>${names}</var>
+<arg>${file_path}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.680181" elapsed="0.000211"/>
+</kw>
+<kw name="Split To Lines" owner="String">
+<msg time="2026-10-17T19:31:16.680501" level="INFO">2 lines returned.</msg>
+<msg time="2026-10-17T19:31:16.680535" level="INFO">@{names} = [ Simon Says | Simone Said ]</msg>
+<var>@{names}</var>
+<arg>${names}</arg>
+<doc>Splits the given string to lines.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.680449" elapsed="0.000094"/>
+</kw>
+<return>
+<value>@{names}</value>
+<status status="PASS" start="2026-10-17T19:31:16.680563" elapsed="0.000021"/>
+</return>
+<msg time="2026-10-17T19:31:16.680630" level="INFO">${names} = ['Simon Says', 'Simone Said']</msg>
+<var>${names}</var>
+<arg>/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom${/}test_data${/}students.txt</arg>
+<status status="PASS" start="2026-10-17T19:31:16.680040" elapsed="0.000599"/>
+</kw>
+<kw name="Print Multiple Names" owner="lists">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}</arg>
+<arg>no_newline=True # Required to ensure first name appears on a new line without an empty line</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.680914" elapsed="0.000120"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.681158" elapsed="0.000095"/>
+</kw>
+<var name="${name}">Simon Says</var>
+<status status="PASS" start="2026-10-17T19:31:16.681107" elapsed="0.000160"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.681347" elapsed="0.000091"/>
+</kw>
+<var name="${name}">Simone Said</var>
+<status status="PASS" start="2026-10-17T19:31:16.681299" elapsed="0.000153"/>
+</iter>
+<var>${name}</var>
+<value>@{names}</value>
+<status status="PASS" start="2026-10-17T19:31:16.681059" elapsed="0.000406"/>
+</for>
+<arg>@{names}</arg>
+<status status="PASS" start="2026-10-17T19:31:16.680789" elapsed="0.000699"/>
+</kw>
+<doc>Print the list of names read from a file using the keyword defined in the resource file</doc>
+<status status="PASS" start="2026-10-17T19:31:16.679823" elapsed="0.001714"/>
+</test>
+<status status="PASS" start="2026-10-17T19:31:16.669207" elapsed="0.012484"/>
+</suite>
+<suite id="s1-s2" name="02-Exams" source="/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/02-exams.robot">
+<test id="s1-s2-t1" name="Get Exam Results" line="14">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2026-10-17T19:31:16.683499" level="INFO" html="true">Getting file '&lt;a href="file:///Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/test_data/exam_results.json"&gt;/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/test_data/exam_results.json&lt;/a&gt;'.</msg>
+<msg time="2026-10-17T19:31:16.683577" level="INFO">${json_content} = {
+	"Simon Says": {
+  	"math": "80%",
+  	"physics": "75%"
+	},
+  "Simone Said": {
+  	"math": "90%",
+  	"physics": "85%"
+  }
+}
+</msg>
+<var>${json_content}</var>
+<arg>${JSON_FILE}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.683445" elapsed="0.000144"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-17T19:31:16.683882" level="INFO">&amp;{results} = { Simon Says={'math': '80%', 'physics': '75%'} | Simone Said={'math': '90%', 'physics': '85%'} }</msg>
+<var>&amp;{results}</var>
+<arg>json.loads('''${json_content}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.683669" elapsed="0.000226"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}</arg>
+<arg>no_newline=True</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.683969" elapsed="0.000117"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${student}: ${results}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.684237" elapsed="0.000106"/>
+</kw>
+<var name="${student}">Simon Says</var>
+<var name="${results}">{'math': '80%', 'physics': '75%'}</var>
+<status status="PASS" start="2026-10-17T19:31:16.684185" elapsed="0.000173"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${student}: ${results}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.684448" elapsed="0.000102"/>
+</kw>
+<var name="${student}">Simone Said</var>
+<var name="${results}">{'math': '90%', 'physics': '85%'}</var>
+<status status="PASS" start="2026-10-17T19:31:16.684399" elapsed="0.000165"/>
+</iter>
+<var>${student}</var>
+<var>${results}</var>
+<value>&amp;{results}</value>
+<status status="PASS" start="2026-10-17T19:31:16.684118" elapsed="0.000460"/>
+</for>
+<status status="PASS" start="2026-10-17T19:31:16.683298" elapsed="0.001363"/>
+</test>
+<test id="s1-s2-t2" name="Get Exam Results Using JSON Library" line="22">
+<kw name="Parse JSON File" owner="JSONLibrary">
+<msg time="2026-10-17T19:31:16.684964" level="INFO">&amp;{results} = { Simon Says={'math': '80%', 'physics': '75%'} | Simone Said={'math': '90%', 'physics': '85%'} }</msg>
+<var>&amp;{results}</var>
+<arg>${JSON_FILE}</arg>
+<tag>json</tag>
+<doc>Returns the parsed ``json_file`` as a dictionary.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.684851" elapsed="0.000125"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}</arg>
+<arg>no_newline=True</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.685046" elapsed="0.000110"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${student}: ${results}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.685293" elapsed="0.000185"/>
+</kw>
+<var name="${student}">Simon Says</var>
+<var name="${results}">{'math': '80%', 'physics': '75%'}</var>
+<status status="PASS" start="2026-10-17T19:31:16.685244" elapsed="0.000248"/>
+</iter>
+<iter>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${student}: ${results}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.685582" elapsed="0.000099"/>
+</kw>
+<var name="${student}">Simone Said</var>
+<var name="${results}">{'math': '90%', 'physics': '85%'}</var>
+<status status="PASS" start="2026-10-17T19:31:16.685533" elapsed="0.000162"/>
+</iter>
+<var>${student}</var>
+<var>${results}</var>
+<value>&amp;{results}</value>
+<status status="PASS" start="2026-10-17T19:31:16.685186" elapsed="0.000523"/>
+</for>
+<status status="PASS" start="2026-10-17T19:31:16.684734" elapsed="0.001024"/>
+</test>
+<test id="s1-s2-t3" name="Generate Exam Results" line="29">
+<kw name="Remove File" owner="OperatingSystem" type="SETUP">
+<msg time="2026-10-17T19:31:16.686005" level="INFO" html="true">File '&lt;a href="file:///Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/test_data/create_exam_results.json"&gt;/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/test_data/create_exam_results.json&lt;/a&gt;' does not exist.</msg>
+<arg>${CREATE_JSON_FILE}</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.685944" elapsed="0.000083"/>
+</kw>
+<variable name="${file_content}">
+<msg time="2026-10-17T19:31:16.686110" level="INFO">${file_content} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-17T19:31:16.686060" elapsed="0.000060"/>
+</variable>
+<for flavor="IN">
+<iter>
+<kw name="Generate Random Number" owner="HelperLibrary">
+<msg time="2026-10-17T19:31:16.686303" level="INFO">${grade} = 90</msg>
+<var>${grade}</var>
+<arg>${0}</arg>
+<arg>${100}</arg>
+<tag>random</tag>
+<doc>Generates a random number between `minimum` and `maximum`.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.686225" elapsed="0.000088"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2026-10-17T19:31:16.686496" level="INFO">${file_content} =  Simon Says: 90%
+</msg>
+<var>${file_content}</var>
+<arg>${file_content}</arg>
+<arg>${student}: ${grade}%${\n}</arg>
+<doc>Concatenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.686371" elapsed="0.000135"/>
+</kw>
+<var name="${student}">Simon Says</var>
+<status status="PASS" start="2026-10-17T19:31:16.686194" elapsed="0.000328"/>
+</iter>
+<iter>
+<kw name="Generate Random Number" owner="HelperLibrary">
+<msg time="2026-10-17T19:31:16.686650" level="INFO">${grade} = 27</msg>
+<var>${grade}</var>
+<arg>${0}</arg>
+<arg>${100}</arg>
+<tag>random</tag>
+<doc>Generates a random number between `minimum` and `maximum`.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.686586" elapsed="0.000073"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2026-10-17T19:31:16.686822" level="INFO">${file_content} =  Simon Says: 90%
+ Simone Said: 27%
+</msg>
+<var>${file_content}</var>
+<arg>${file_content}</arg>
+<arg>${student}: ${grade}%${\n}</arg>
+<doc>Concatenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.686711" elapsed="0.000121"/>
+</kw>
+<var name="${student}">Simone Said</var>
+<status status="PASS" start="2026-10-17T19:31:16.686556" elapsed="0.000291"/>
+</iter>
+<var>${student}</var>
+<value>@{STUDENTS}</value>
+<status status="PASS" start="2026-10-17T19:31:16.686149" elapsed="0.000710"/>
+</for>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2026-10-17T19:31:16.687114" level="INFO" html="true">Created file '&lt;a href="file:///Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/test_data/create_exam_results.json"&gt;/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/02-classroom/test_data/create_exam_results.json&lt;/a&gt;'.</msg>
+<arg>${CREATE_JSON_FILE}</arg>
+<arg>${file_content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2026-10-17T19:31:16.686919" elapsed="0.000217"/>
+</kw>
+<status status="PASS" start="2026-10-17T19:31:16.685828" elapsed="0.001358"/>
+</test>
+<status status="PASS" start="2026-10-17T19:31:16.681845" elapsed="0.005444"/>
+</suite>
+<status status="PASS" start="2026-10-17T19:31:16.652413" elapsed="0.035051"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="02-Classroom" id="s1" pass="5" fail="0" skip="0">02-Classroom</stat>
+<stat name="01-Lists" id="s1-s1" pass="2" fail="0" skip="0">02-Classroom.01-Lists</stat>
+<stat name="02-Exams" id="s1-s2" pass="3" fail="0" skip="0">02-Classroom.02-Exams</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
