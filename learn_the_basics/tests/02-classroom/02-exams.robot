@@ -1,3 +1,7 @@
+# Need to include --pythonpath to libraries when running the tests
+# Example usage:
+# robot --pythonpath ../libraries .
+
 *** Settings ***
 Library     OperatingSystem
 
