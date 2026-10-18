@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.13 on darwin)" generated="2026-10-17T16:57:23.805134" rpa="false" schemaversion="5">
+<suite id="s1" name="01-Greetings" source="/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/01-greetings">
+<kw name="Global Suite Setup" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-10-17T16:57:23.825330" level="INFO">Our Robot awesomeness begins!</msg>
+<arg>Our Robot awesomeness begins!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-17T16:57:23.825208" elapsed="0.000152"/>
+</kw>
+<variable name="${YOUR_NAME_INIT}" scope="GLOBAL">
+<msg time="2026-10-17T16:57:23.825448" level="INFO">${YOUR_NAME_INIT} = $YOUR_NAME_INIT}</msg>
+<var>$YOUR_NAME_INIT}</var>
+<status status="PASS" start="2026-10-17T16:57:23.825393" elapsed="0.000067"/>
+</variable>
+<status status="PASS" start="2026-10-17T16:57:23.824956" elapsed="0.000531"/>
+</kw>
+<suite id="s1-s1" name="01-Greetings" source="/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/01-greetings/01-greetings.robot">
+<test id="s1-s1-t1" name="Greetings from Robot" line="8">
+<kw name="Print Your Name" owner="greetings">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-10-17T16:57:23.827182" level="INFO">Simon Says</msg>
+<arg>${your_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-17T16:57:23.827079" elapsed="0.000122"/>
+</kw>
+<arg>${YOUR_NAME}</arg>
+<status status="PASS" start="2026-10-17T16:57:23.826806" elapsed="0.000420"/>
+</kw>
+<doc>Prints the value of the YOUR_NAME variable that is defined in this file.</doc>
+<tag>ubuntu</tag>
+<status status="PASS" start="2026-10-17T16:57:23.826582" elapsed="0.000700"/>
+</test>
+<test id="s1-s1-t2" name="Greetings Default" line="13">
+<kw name="Print Your Name" owner="greetings">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-10-17T16:57:23.827774" level="INFO">Simone Said</msg>
+<arg>${your_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-17T16:57:23.827682" elapsed="0.000110"/>
+</kw>
+<status status="PASS" start="2026-10-17T16:57:23.827535" elapsed="0.000279"/>
+</kw>
+<doc>Prints the default value defined in the keyword.</doc>
+<tag>gentoo</tag>
+<status status="PASS" start="2026-10-17T16:57:23.827371" elapsed="0.000488"/>
+</test>
+<test id="s1-s1-t3" name="Greetings from Resource" line="18">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2026-10-17T16:57:23.828242" level="INFO">Initiating Greetings from Resource Test</msg>
+<arg>Initiating Greetings from Resource Test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-17T16:57:23.828161" elapsed="0.000098"/>
+</kw>
+<kw name="Print Your Name" owner="greetings">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-10-17T16:57:23.828561" level="INFO">Simone Says</msg>
+<arg>${your_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-17T16:57:23.828477" elapsed="0.000101"/>
+</kw>
+<arg>${YOUR_NAME_RESOURCE}</arg>
+<status status="PASS" start="2026-10-17T16:57:23.828322" elapsed="0.000275"/>
+</kw>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2026-10-17T16:57:23.828785" level="INFO">Finished Greetings from Resource Test</msg>
+<arg>Finished Greetings from Resource Test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-17T16:57:23.828710" elapsed="0.000091"/>
+</kw>
+<doc>Prints the value of the YOUR_NAME_RESOURCE variable that is defined in the resource file.</doc>
+<tag>centos</tag>
+<status status="PASS" start="2026-10-17T16:57:23.827936" elapsed="0.000891"/>
+</test>
+<test id="s1-s1-t4" name="Greetings from init" line="25">
+<kw name="Print Your Name" owner="greetings">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-10-17T16:57:23.829323" level="INFO">$YOUR_NAME_INIT}</msg>
+<arg>${your_name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-17T16:57:23.829240" elapsed="0.000100"/>
+</kw>
+<arg>${YOUR_NAME_INIT}</arg>
+<status status="PASS" start="2026-10-17T16:57:23.829084" elapsed="0.000276"/>
+</kw>
+<doc>Prints the value of the YOUR_NAME_INIT variable that is defined in the global init file.</doc>
+<tag>centos</tag>
+<status status="PASS" start="2026-10-17T16:57:23.828905" elapsed="0.000498"/>
+</test>
+<status status="PASS" start="2026-10-17T16:57:23.825511" elapsed="0.004044"/>
+</suite>
+<kw name="Global Suite Teardown" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-10-17T16:57:23.829969" level="INFO">The end of the awesomeness!</msg>
+<arg>The end of the awesomeness!</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-10-17T16:57:23.829890" elapsed="0.000096"/>
+</kw>
+<status status="PASS" start="2026-10-17T16:57:23.829780" elapsed="0.000227"/>
+</kw>
+<status status="PASS" start="2026-10-17T16:57:23.806090" elapsed="0.023927"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">centos</stat>
+<stat pass="1" fail="0" skip="0">gentoo</stat>
+<stat pass="1" fail="0" skip="0">ubuntu</stat>
+</tag>
+<suite>
+<stat name="01-Greetings" id="s1" pass="4" fail="0" skip="0">01-Greetings</stat>
+<stat name="01-Greetings" id="s1-s1" pass="4" fail="0" skip="0">01-Greetings.01-Greetings</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
