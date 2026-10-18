@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.13 on darwin)" generated="2026-10-17T20:42:23.298837" rpa="false" schemaversion="5">
+<suite id="s1" name="03-Remote" source="/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/03-remote">
+<suite id="s1-s1" name="01-Connection" source="/Users/bk/wb/robot_framework/robot_framework_lab/learn_the_basics/tests/03-remote/01-connection.robot">
+<kw name="Open Connection And Log In With SSH Key" type="SETUP">
+<kw name="Open Connection" owner="SSHLibrary">
+<arg>${HOST}[name]</arg>
+<arg>port=${HOST}[port]</arg>
+<arg>alias=${HOST}[alias]</arg>
+<doc>Opens a new SSH connection to the given ``host`` and ``port``.</doc>
+<status status="PASS" start="2026-10-17T20:42:23.399113" elapsed="0.000218"/>
+</kw>
+<kw name="Login With Public Key" owner="SSHLibrary">
+<msg time="2026-10-17T20:42:23.399509" level="INFO">Logging into '192.168.1.230:22' as 'rupert'.</msg>
+<msg time="2026-10-17T20:42:25.010530" level="INFO">Read output: Welcome to Ubuntu 24.04.5 LTS (GNU/Linux 6.8.0-1060-raspi aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+39 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+38 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+New release '26.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+*** System restart required ***
+Last login: Sat Oct 17 20:26:48 2026 from 192.168.1.103
+[?2004hrupert@rupert-dev-00:~$</msg>
+<arg>${SSH_USERNAME}</arg>
+<arg>${privatekey}</arg>
+<doc>Logs into the SSH server using key-based authentication.</doc>
+<status status="PASS" start="2026-10-17T20:42:23.399433" elapsed="1.611632"/>
+</kw>
+<status status="PASS" start="2026-10-17T20:42:23.398793" elapsed="1.612704"/>
+</kw>
+<test id="s1-s1-t1" name="Get Date From Remote Host" line="16">
+<kw name="Switch Connection" owner="SSHLibrary">
+<arg>${HOST}[alias]</arg>
+<doc>Switches the active connection by index or alias.</doc>
+<status status="PASS" start="2026-10-17T20:42:25.013571" elapsed="0.000590"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-10-17T20:42:25.015014" level="INFO">Executing command 'date'.</msg>
+<msg time="2026-10-17T20:42:25.101222" level="INFO">Command exited with return code 0.</msg>
+<msg time="2026-10-17T20:42:25.101924" level="INFO">${date} = Sat Oct 17 20:42:25 PDT 2026</msg>
+<var>${date}</var>
+<arg>date</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-10-17T20:42:25.014767" elapsed="0.087239"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${date}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T20:42:25.102793" elapsed="0.001327"/>
+</kw>
+<status status="PASS" start="2026-10-17T20:42:25.011884" elapsed="0.092636"/>
+</test>
+<test id="s1-s1-t2" name="Test Package Management" line="22">
+<kw name="APK Search" owner="apk-management">
+<kw name="Switch Connection" owner="SSHLibrary">
+<arg>${remote_host}</arg>
+<doc>Switches the active connection by index or alias.</doc>
+<status status="PASS" start="2026-10-17T20:42:25.107238" elapsed="0.000196"/>
+</kw>
+<kw name="Execute Command" owner="SSHLibrary">
+<msg time="2026-10-17T20:42:25.108022" level="INFO">Executing command 'apt search --names-only ipython'.</msg>
+<msg time="2026-10-17T20:42:26.616331" level="INFO">Command exited with return code 0.</msg>
+<msg time="2026-10-17T20:42:26.616627" level="INFO">${stdout} = Sorting...
+Full Text Search...
+ipython3/noble 8.20.0-1 all
+  Enhanced interactive Python 3 shell
+
+python-ipython-doc/noble 8.20.0-1 all
+  Enhanced interactive Python shell (documentation)
+
+python3-ipy...</msg>
+<msg time="2026-10-17T20:42:26.616682" level="INFO">${rc} = 0</msg>
+<var>${stdout}</var>
+<var>${rc}</var>
+<arg>apt search --names-only ${package_name}</arg>
+<arg>return_rc=${TRUE}</arg>
+<doc>Executes ``command`` on the remote machine and returns its outputs.</doc>
+<status status="PASS" start="2026-10-17T20:42:25.107714" elapsed="1.508997"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-10-17T20:42:26.617413" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${rc}</arg>
+<arg>0</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-10-17T20:42:26.616962" elapsed="0.000663"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${\n}The following packages were found: ${stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-10-17T20:42:26.617964" elapsed="0.000492"/>
+</kw>
+<arg>${HOST}[alias]</arg>
+<arg>ipython</arg>
+<doc>Searches for package(s) based on the specified
+`pattern` on the specified `remote_host`.</doc>
+<status status="PASS" start="2026-10-17T20:42:25.106676" elapsed="1.511888"/>
+</kw>
+<status status="PASS" start="2026-10-17T20:42:25.105080" elapsed="1.513686"/>
+</test>
+<status status="PASS" start="2026-10-17T20:42:23.316882" elapsed="3.302418"/>
+</suite>
+<status status="PASS" start="2026-10-17T20:42:23.299664" elapsed="3.320454"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="03-Remote" id="s1" pass="2" fail="0" skip="0">03-Remote</stat>
+<stat name="01-Connection" id="s1-s1" pass="2" fail="0" skip="0">03-Remote.01-Connection</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
