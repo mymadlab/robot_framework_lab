@@ -1,8 +1,10 @@
 *** Settings ***
 Resource    ${CURDIR}${/}resources${/}lists.resource
 
+
 *** Variables ***
 @{NAMES}    Simon Says    Simone Says    Simone Said    Simon Said
+
 
 *** Test Cases ***
 Print list of names

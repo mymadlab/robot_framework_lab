@@ -9,10 +9,12 @@ Library     OperatingSystem
 Library     HelperLibrary
 Library     JSONLibrary
 
+
 *** Variables ***
 ${JSON_FILE}    ${CURDIR}${/}test_data${/}exam_results.json
 ${CREATE_JSON_FILE}    ${CURDIR}${/}test_data${/}create_exam_results.json
 @{STUDENTS}    Simon Says    Simone Said
+
 
 *** Test Cases ***
 Get Exam Results

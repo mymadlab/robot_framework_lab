@@ -8,9 +8,11 @@ Resource        ${CURDIR}${/}resources${/}apk-management.resource
 
 Suite Setup     Open Connection And Log In With SSH Key
 
+
 *** Variables ***
 &{HOST}     name=192.168.1.230    port=22    alias=openssh-server-for-robot
 ${privatekey}    /Users/bk/.ssh/id_ecdsa
+
 
 *** Test Cases ***
 Get Date From Remote Host

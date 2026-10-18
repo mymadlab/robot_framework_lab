@@ -1,8 +1,10 @@
 *** Settings ***
 Resource    ${CURDIR}${/}resources${/}greetings.resource
 
+
 *** Variables ***
 ${YOUR_NAME}    Simon Says
+
 
 *** Test Cases ***
 Greetings from Robot
@@ -12,13 +14,13 @@ Greetings from Robot
 
 Greetings Default
     [Documentation]    Prints the default value defined in the keyword.
-	  [Tags]    gentoo
+    [Tags]    gentoo
     Print Your Name
 
 Greetings from Resource
     [Documentation]    Prints the value of the YOUR_NAME_RESOURCE variable that is defined in the resource file.
     [Tags]    centos
-		[Setup]    Log    Initiating Greetings from Resource Test
+    [Setup]    Log    Initiating Greetings from Resource Test
     Print Your Name    ${YOUR_NAME_RESOURCE}
     [Teardown]    Log    Finished Greetings from Resource Test
 
