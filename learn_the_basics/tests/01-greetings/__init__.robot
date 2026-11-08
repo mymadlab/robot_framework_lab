@@ -1,9 +1,11 @@
 *** Settings ***
-Suite Setup         Global Suite Setup
-Suite Teardown      Global Suite Teardown
+Suite Setup       Global Suite Setup
+Suite Teardown    Global Suite Teardown
+
 
 *** Variables ***
-${YOUR_NAME_INIT}       Simon said
+${YOUR_NAME_INIT}    Simon said
+
 
 *** Keywords ***
 Global Suite Setup

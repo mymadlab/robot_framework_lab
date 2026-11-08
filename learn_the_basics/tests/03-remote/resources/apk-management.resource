@@ -1,5 +1,5 @@
 *** Settings ***
-Library     SSHLibrary
+Library    SSHLibrary
 
 
 *** Keywords ***

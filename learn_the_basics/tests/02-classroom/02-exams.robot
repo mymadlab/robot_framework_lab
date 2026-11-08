@@ -1,19 +1,20 @@
+*** Comments ***
 # Need to include --pythonpath to libraries when running the tests
 # Example usage:
 # robot --pythonpath ../libraries .
 
-*** Settings ***
-Library     OperatingSystem
 
+*** Settings ***
+Library    OperatingSystem
 # Custom liberaries to import
-Library     HelperLibrary
-Library     JSONLibrary
+Library    HelperLibrary
+Library    JSONLibrary
 
 
 *** Variables ***
-${JSON_FILE}    ${CURDIR}${/}test_data${/}exam_results.json
+${JSON_FILE}           ${CURDIR}${/}test_data${/}exam_results.json
 ${CREATE_JSON_FILE}    ${CURDIR}${/}test_data${/}create_exam_results.json
-@{STUDENTS}    Simon Says    Simone Said
+@{STUDENTS}            Simon Says    Simone Said
 
 
 *** Test Cases ***

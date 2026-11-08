@@ -1,16 +1,18 @@
+*** Comments ***
 # Value for the SSH username should be passed via the command line
 # Example usage:
 # robot --variable SSH_USERNAME:your_ssh_username .
 
-*** Settings ***
-Library         SSHLibrary
-Resource        ${CURDIR}${/}resources${/}apk-management.resource
 
-Suite Setup     Open Connection And Log In With SSH Key
+*** Settings ***
+Library        SSHLibrary
+Resource       ${CURDIR}${/}resources${/}apk-management.resource
+
+Suite Setup    Open Connection And Log In With SSH Key
 
 
 *** Variables ***
-&{HOST}     name=192.168.1.230    port=22    alias=openssh-server-for-robot
+&{HOST}          name=192.168.1.230    port=22    alias=openssh-server-for-robot
 ${privatekey}    /Users/bk/.ssh/id_ecdsa
 
 
@@ -23,6 +25,7 @@ Get Date From Remote Host
 
 Test Package Management
     APK Search    ${HOST}[alias]    ipython
+
 
 *** Keywords ***
 Open Connection And Log In With SSH Key
